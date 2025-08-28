@@ -1,4 +1,4 @@
-# Selas UMI Admin
+# Silas UMI Admin
 
 > 基于 Umi 4.x + Ant Design 5.x + TypeScript 的现代化后台管理模板
 
@@ -34,7 +34,7 @@
 
 ```bash
 git clone <your-repository-url>
-cd selas-umi-admin
+cd silas-umi-admin
 ```
 
 ### 安装依赖
@@ -79,7 +79,7 @@ npm run build
 ## 📁 项目结构
 
 ```
-selas-umi-admin/
+silas-umi-admin/
 ├── config/                    # 配置文件目录
 │   ├── config.ts             # 主配置文件
 │   └── routes.ts             # 路由配置
@@ -166,7 +166,7 @@ import { theme } from 'antd';
 
 const MyComponent = () => {
   const { token } = theme.useToken();
-  
+
   return (
     <div
       className={css`
@@ -256,8 +256,8 @@ server {
 
 ## 📞 联系方式
 
-- 作者: dengxian
-- 邮箱: dengxian@gentlehealth.cn
+- 作者: X.Silas
+- 邮箱: coderone22@gamil.com
 
 ---
 
