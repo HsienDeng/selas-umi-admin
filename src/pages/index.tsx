@@ -6,7 +6,6 @@ export default function HomePage() {
     return (
     <div>
         {user.name}
-
         <button onClick={fetchUser}>update user</button>
     </div>
     );
