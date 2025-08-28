@@ -1,5 +1,4 @@
 export default [
-    { path: "/", name: "欢迎", component: "index" },
-    { path: "/docs", component: "docs" },
-    { path: "/setState", component: "./useState" },
+    { path: "/", redirect: "/home" },
+    { path: "/home", name: "首页", component: "./Home" },
 ]

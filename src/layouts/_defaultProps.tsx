@@ -9,9 +9,8 @@ export default {
   route: {
     path: '/',
     routes: [
-        { path: "/", name: "欢迎", component: "index" },
-        { path: "/docs", name: "文档", component: "docs" },
-        { path: "/setState", component: "./useState" },
+      { path: "/", redirect: "/home" },
+      { path: "/home", name: "首页", component: "./Home" },
     ]
   },
   location: {

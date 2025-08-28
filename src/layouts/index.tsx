@@ -1,16 +1,13 @@
+import {Outlet} from "umi";
 import type { ProSettings } from '@ant-design/pro-components';
 import {
     PageContainer,
     ProCard,
     ProConfigProvider,
-    ProLayout,
-    SettingDrawer,
+    ProLayout
 } from '@ant-design/pro-components';
 
-import {
-    Button,
-    ConfigProvider,
-} from 'antd';
+import { ConfigProvider } from 'antd';
 import { useState } from 'react';
 import defaultProps from './_defaultProps';
 import { AvatarDropdown } from './components/AvatarDropdown';
@@ -29,11 +26,12 @@ export default () => {
         "fixedHeader": true
       });
 
-    const [pathname, setPathname] = useState('/list/sub-page/sub-sub-page1');
+    const [pathname, setPathname] = useState('/home');
     const [num, setNum] = useState(40);
     if (typeof document === 'undefined') {
         return <div />;
     }
+
     return (
         <div
             id="test-pro-layout"
@@ -95,18 +93,6 @@ export default () => {
                                 );
                             },
                         }}
-                        // actionsRender={(props) => {
-                        //     if (props.isMobile) return [];
-                        //     if (typeof window === 'undefined') return [];
-                        //     return [
-                        //         props.layout !== 'side' && document.body.clientWidth > 1400 ? (
-                        //             <SearchInput />
-                        //         ) : undefined,
-                        //         <InfoCircleFilled key="InfoCircleFilled" />,
-                        //         <QuestionCircleFilled key="QuestionCircleFilled" />,
-                        //         <GithubFilled key="GithubFilled" />,
-                        //     ];
-                        // }}
                         headerTitleRender={(logo, title, _) => {
                             return (
                                 <HeaderTitle
@@ -123,7 +109,7 @@ export default () => {
                         menuItemRender={(item, dom) => (
                             <div
                                 onClick={() => {
-                                    setPathname(item.path || '/welcome');
+                                    setPathname(item.path || '/home');
                                 }}
                             >
                                 {dom}
@@ -135,50 +121,16 @@ export default () => {
                             token={{
                                 paddingInlinePageContainerContent: num,
                             }}
-                            extra={[
-                                <Button key="3">操作</Button>,
-                                <Button key="2">操作</Button>,
-                                <Button
-                                    key="1"
-                                    type="primary"
-                                    onClick={() => {
-                                        setNum(num > 0 ? 0 : 40);
-                                    }}
-                                >
-                                    主操作
-                                </Button>,
-                            ]}
-                            subTitle="简单的描述"
-                            // footer={[
-                            //     <Button key="3">重置</Button>,
-                            //     <Button key="2" type="primary">
-                            //         提交
-                            //     </Button>,
-                            // ]}
                         >
                             <ProCard
                                 style={{
                                     height: '200vh',
-                                    minHeight: 800,
+                                    minHeight: 600,
                                 }}
                             >
-                                <div />
+                                {/* <Outlet /> */}
                             </ProCard>
                         </PageContainer>
-
-                        <SettingDrawer
-                            pathname={pathname}
-                            enableDarkTheme
-                            getContainer={(e: any) => {
-                                if (typeof window === 'undefined') return e;
-                                return document.getElementById('test-pro-layout');
-                            }}
-                            settings={settings}
-                            onSettingChange={(changeSetting) => {
-                                setSetting(changeSetting);
-                            }}
-                            disableUrlParams={false}
-                        />
                     </ProLayout>
                 </ConfigProvider>
             </ProConfigProvider>
