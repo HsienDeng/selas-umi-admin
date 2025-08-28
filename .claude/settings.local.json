@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(git add .)",
+      "Bash(del \"src\\pages\\Login\\index.less\")",
+      "Bash(rm \"src/pages/Login/index.less\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: UmiJS 4 admin project\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"feat: initial commit for UmiJS 4 admin project\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
