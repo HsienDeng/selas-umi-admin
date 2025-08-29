@@ -15,7 +15,7 @@ import { HeaderTitle } from './components/HeaderTitle';
 import { MenuFooter } from './components/MenuFooter';
 
 export default () => {
-    const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
+    const [settings] = useState<Partial<ProSettings> | undefined>({
         "fixSiderbar": true,
         "layout": "mix",
         "splitMenus": false,

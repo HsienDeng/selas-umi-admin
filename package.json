@@ -6,7 +6,13 @@
     "build": "umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint-staged": "lint-staged",
+    "tsc": "tsc --noEmit"
   },
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
@@ -19,7 +25,20 @@
   "devDependencies": {
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
+    "@umijs/fabric": "2.9.0",
     "@umijs/lint": "^4.4.12",
-    "typescript": "^5.0.3"
+    "prettier": "2.3.2",
+    "typescript": "^5.0.3",
+    "yorkie": "2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   }
 }
